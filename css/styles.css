@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   font-family: "Roboto", sans-serif;
   background-color: #fff;
@@ -5,12 +10,21 @@ body {
   margin: 0;
   padding: 0;
 }
+main {
+  flex-grow: 1;
+}
 /*
 default settings
 font-size: 16;
 font-weight(title): 700;
 font-weight(text): 400;
 */
+/* flex
+Давай підсумуємо?
+Властивість flex-direction задає напрямок головній і поперечній осям.
+Властивість justify-content керує розташуванням елементів уздовж головної осі. Тобто, якщо main axis горизонтально, можна елементи по горизонталі переміщувати.
+Властивість align-items керуватє елементами по висоті
+ */
 a {
   text-decoration: none;
 }
@@ -20,8 +34,21 @@ ol {
   margin: 0;
   padding: 0;
 }
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #607d8b;
+}
 /* #region header*/
-
+.page-nav .navigation {
+  display: flex;
+}
 .page-nav .logo-top {
   font-size: 18px;
   font-weight: 700;
@@ -95,9 +122,7 @@ ol {
 /* #endregion */
 
 /* #region benefits */
-.list-ben {
-  /* list-style: none; */
-}
+
 .title-ben {
   color: #2e2f42;
   font-size: 20px;
@@ -146,16 +171,12 @@ ol {
 }
 .team-list {
   background-color: #ffffff;
-  /* list-style: none; */
 }
 
 /* #endregion team */
 
 /* #region portfolio */
 
-.port-list {
-  /* list-style: none; */
-}
 .title-port {
   color: #2e2f42;
   text-align: center;
